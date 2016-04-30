@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8175.2" systemVersion="14E46" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
     <entity name="Device" representedClassName=".Device" syncable="YES">
         <attribute name="deviceType" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="devices" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName=".Person" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="devices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Device" inverseName="owner" inverseEntity="Device" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Device" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="Person" positionX="-36" positionY="27" width="128" height="60"/>
+        <element name="Device" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Person" positionX="-36" positionY="27" width="128" height="75"/>
     </elements>
 </model>
